@@ -1,0 +1,2 @@
+# hof-assets
+Frontend Assets
