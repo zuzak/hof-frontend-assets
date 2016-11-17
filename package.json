@@ -1,0 +1,18 @@
+{
+  "name": "hof-frontend-assets",
+  "version": "0.1.0",
+  "main": "./bin/index.js",
+  "description": "Frontend JS, CSS and images for a form service",
+  "license": "GPLv3",
+  "author": "UKHomeOfficeForms",
+  "repository": "https://github.com/UKHomeOfficeForms/hof-frontend-assets.git",
+  "bugs": "https://github.com/UKHomeOfficeForms/hof-frontend-assets/issues",
+  "bin": "./bin/index.js",
+  "dependencies": {
+    "browserify": "^12.0.1",
+    "hof-frontend-toolkit": "^1.0.0",
+    "node-sass": "^3.10.0",
+    "typeahead-aria": "^1.0.1",
+    "underscore": "^1.8.3"
+  }
+}
