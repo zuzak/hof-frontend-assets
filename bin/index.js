@@ -1,35 +1,29 @@
 #!/usr/bin/env node
 
-'use strict';
-
 const exec = require('child_process').exec;
-const caller = process.cwd();
-const path = require('path');
-const cwd = path.resolve(__dirname, '../');
+const tasks = require('./tasks');
 
-exec(`mkdir -p ${caller}/public/js ${caller}/public/css ${caller}/public/images`, (err) => {
+exec(tasks['make-folders'], (err) => {
   if (err) {
-    console.error(`Error making asset directories: ${err}`);
-    return;
+    return console.error(`Error making folders ${err}`);
   }
-  exec(`${caller}/node_modules/.bin/node-sass ${cwd}/scss/app.scss ${caller}/public/css/app.css --include-path ./node_modules`, (err) => {
+  console.log('Made folders');
+
+  exec(tasks['compile-css'], (err) => {
     if (err) {
-      console.error(`Error compiling CSS: ${err}`);
-      return;
-      console.info('Compiled CSS with node-sass');
+      return console.error(`Error compiling CSS: ${err}`);
     }
+    console.info('Compiled CSS with node-sass');
   });
-  exec(`browserify ${cwd}/js/index.js > ${caller}/public/js/bundle.js`, (err) => {
+  exec(tasks['bundle-js'], (err) => {
     if (err) {
-      console.error(`Error compiling JS: ${err}`);
-      return;
-      console.info('Compiled JS with Browserify');
+      return console.error(`Error compiling JS: ${err}`);
     }
+    console.info('Compiled JS with Browserify');
   });
-  exec(`cp -r ${cwd}/images ${caller}/public`, (err) => {
+  exec(tasks['copy-images'], (err) => {
     if (err) {
-      console.error(`Error copying images: ${err}`);
-      return;
+      return console.error(`Error copying images: ${err}`);
     }
     console.info('Copied images');
   });

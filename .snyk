@@ -1,0 +1,35 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.7.0
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
+ignore:
+  'npm:minimatch:20160620':
+    - hof-frontend-toolkit > browserify > glob > minimatch:
+        reason: None given
+        expires: '2017-01-29T16:04:35.188Z'
+  'npm:mustache:20151207':
+    - hof-frontend-toolkit > mustache:
+        reason: None given
+        expires: '2017-01-29T16:24:59.361Z'
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:uglify-js:20150824':
+    - hof-frontend-toolkit > browserify > umd > ruglify > uglify-js:
+        patched: '2016-12-30T16:03:22.620Z'
+    - hof-frontend-toolkit > browserify > umd > uglify-js:
+        patched: '2016-12-30T16:03:22.620Z'
+  'npm:minimatch:20160620':
+    - hof-frontend-toolkit > browserify > glob > minimatch:
+        patched: '2016-12-30T15:46:03.928Z'
+  'npm:uglify-js:20151024':
+    - hof-frontend-toolkit > browserify > umd > uglify-js:
+        patched: '2016-12-30T15:46:03.928Z'
+    - hof-frontend-toolkit > browserify > umd > ruglify > uglify-js:
+        patched: '2016-12-30T15:46:03.928Z'
+    - hof-frontend-toolkit > browserify > umd > ruglify > uglify-js:
+        patched: '2016-12-30T16:01:23.543Z'
+    - hof-frontend-toolkit > browserify > umd > uglify-js:
+        patched: '2016-12-30T16:01:23.543Z'
+    - hof-frontend-toolkit > browserify > umd > ruglify > uglify-js:
+        patched: '2016-12-30T16:03:22.620Z'
+    - hof-frontend-toolkit > browserify > umd > uglify-js:
+        patched: '2016-12-30T16:03:22.620Z'
