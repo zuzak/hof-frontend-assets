@@ -25,7 +25,6 @@ module.exports = function(config) {
         [
           istanbul({
             ignore: ['node_modules/**', 'test/**'],
-            includeUntested: false,
             defaultIgnore: true
           }),
           {
@@ -47,8 +46,30 @@ module.exports = function(config) {
     ],
 
     coverageReporter: {
-      dir: 'coverage/',
-      subdir: 'src/'
+      dir: 'coverage',
+      subdir: function(browser) {
+        return browser.toLowerCase().split(/[ /-]/)[0];
+      },
+      check: {
+        global: {
+          statements: 100,
+          branches: 100,
+          functions: 100,
+          lines: 100,
+          excludes: [
+            'test'
+          ]
+        },
+        each: {
+          statements: 100,
+          branches: 100,
+          functions: 100,
+          lines: 100,
+          excludes: [
+            'test'
+          ]
+        }
+      }
     },
 
     // preprocess matching files before serving them to the browser

@@ -8,7 +8,7 @@
   "repository": "https://github.com/UKHomeOfficeForms/hof-frontend-assets.git",
   "bugs": "https://github.com/UKHomeOfficeForms/hof-frontend-assets/issues",
   "bin": {
-    "assets": "./bin/index.js"
+    "hof-frontend-assets": "./bin/index.js"
   },
   "scripts": {
     "test": "npm-run-all lint style browser:test unit:coverage",

@@ -14,29 +14,15 @@ Includes CSS, JS - including [Typeahead Aria](https://github.com/UKHomeOffice/ty
   "hof-frontend-assets": "^0.1.0"
 },
 "scripts": {
-  "postinstall": "npm hof-frontend-assets"
+  "postinstall": "hof-frontend-assets"
 }
 ```
 
-When you next run `npm install`, npm will install `hof-frontend-assets@v0.1.0 and build the assets into the root of your project.
+When you next run `npm install`, `npm` will install `hof-frontend-assets@v0.1.0` and build the assets into `/public`.
 
 ## Typeahead Aria
 
+The Typeahead Aria code is a key feature of `hof-frontend-assets` that allows one to add a dropdown, typeahead countries list with aria to a select field.
+
 ### Usage
 To use Typeahead Aria, add `class='typeahead' to the HTML `select` element you wish to decorate.
-
-### Country List
-Add [Typeahead Countries](https://github.com/UKHomeOffice/typeahead-countries) to the field in your HOF service that requires the list.
-
-Example field in a HOF form service using the Typeahead:
-```
-'country-select'-step: {
-  mixin: 'select',
-  className: ['typeahead', 'js-hidden'],
-  options: [''].concat(require('typeahead-countries').allCountries),
-  legend: {
-    className: 'visuallyhidden'
-  },
-  validate: ['required']
-},
-```
