@@ -16,13 +16,14 @@ var toolkitStub = {
 
 var typeaheadStub = sinon.stub();
 
-proxyquire('../../src/js/index.js', {
+var typeahead = proxyquire('../../src/js/index.js', {
   'hof-frontend-toolkit': toolkitStub,
   './typeahead': typeaheadStub
 });
 
 describe('index', function() {
-  it('calls typeahead with elements', function() {
+  it('exports the typeahead module', function() {
+    typeahead();
     typeaheadStub.should.have.been.calledOnce;
   });
 });

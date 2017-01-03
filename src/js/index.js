@@ -8,6 +8,4 @@ var formFocus = toolkit.formFocus;
 helpers.documentReady(progressiveReveal);
 helpers.documentReady(formFocus);
 
-var typeahead = require('./typeahead');
-typeahead();
-
+module.exports = require('./typeahead');
