@@ -4,6 +4,10 @@
   "main": "./bin/index.js",
   "description": "Frontend JS, CSS and images for a form service",
   "license": "GPLv3",
+  "engines": {
+    "node": ">=4.0.0",
+    "npm": "~3.0.0"
+  },
   "author": "UKHomeOfficeForms",
   "repository": "https://github.com/UKHomeOfficeForms/hof-frontend-assets.git",
   "bugs": "https://github.com/UKHomeOfficeForms/hof-frontend-assets/issues",
