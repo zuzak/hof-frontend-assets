@@ -26,7 +26,8 @@
     "lint": "eslint .",
     "style": "jscs .",
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "prepublish": "npm run snyk-protect",
+    "ci": "travis-conditions"
   },
   "dependencies": {
     "async": "^2.1.4",
@@ -68,6 +69,7 @@
     "sinon": "^1.17.6",
     "sinon-chai": "^2.8.0",
     "snyk": "^1.22.1",
+    "travis-conditions": "0.0.0",
     "watchify": "^3.7.0"
   },
   "pre-commit": [
