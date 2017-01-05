@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "./bin/index.js",
   "description": "Frontend JS, CSS and images for a form service",
-  "license": "GPLv3",
+  "license": "MIT",
   "engines": {
     "node": ">=4.0.0",
     "npm": "~3.0.0"
