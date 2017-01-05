@@ -2,23 +2,25 @@
 
 var TypeaheadBloodhound = require('typeahead-aria').Bloodhound;
 var sorter = require('./helpers').sorter;
+var _ = require('lodash');
 
 var Bloodhound = function Bloodhound($selectEl) {
   this.$selectEl = $selectEl;
 };
 
-Bloodhound.prototype.getData = function getData(list) {
-  return {
+Bloodhound.prototype.getSettings = function getSettings(list, options) {
+  var sorterFn = options ? options.sorter : sorter(this.input);
+  return _.extend({}, {
     datumTokenizer: TypeaheadBloodhound.tokenizers.whitespace,
     queryTokenizer: TypeaheadBloodhound.tokenizers.whitespace,
     local: list,
-    sorter: sorter(this.input),
-    limit: 100
-  };
+    sorter: sorterFn,
+    limit: 100,
+  }, options);
 };
 
-Bloodhound.prototype.getSource = function getSource(list) {
-  return new TypeaheadBloodhound(this.getData(list));
+Bloodhound.prototype.getSource = function getSource(data) {
+  return new TypeaheadBloodhound(data);
 };
 
 Bloodhound.prototype.setInput = function setInputElement(val) {

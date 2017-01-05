@@ -26,4 +26,10 @@ describe('index', function() {
     typeahead();
     typeaheadStub.should.have.been.calledOnce;
   });
+
+  it('export passes options argument to typeahead', function() {
+    var options = 'options';
+    typeahead(options);
+    typeaheadStub.should.have.been.calledWith(options);
+  });
 });

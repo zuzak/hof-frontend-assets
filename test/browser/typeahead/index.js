@@ -9,9 +9,11 @@ var inputElement = $('<input/>');
 var inputValue = 'foo';
 var source = {foo: 'bar', bar: 'baz'};
 var list = ['one', 'two'];
+var data = {};
 
 var BloodhoundStubPrototype = {
   getSource: sinon.stub().returns(source),
+  getSettings: sinon.stub().returns(data),
   setInput: sinon.stub()
 };
 
@@ -54,11 +56,12 @@ describe('typeahead', function() {
 
   describe('module', function() {
     var selectElements;
+    var options = {};
 
     beforeEach(function() {
       this.html = fixture.load('selects.html');
       selectElements = $(this.html).find('.typeahead');
-      typeahead(selectElements);
+      typeahead(options);
     });
 
     afterEach(function() {
@@ -92,9 +95,39 @@ describe('typeahead', function() {
         .should.have.been.calledWith($(selectElements[1]));
     });
 
-    it('gets the source from bloodhound with the list', function() {
+    it('gets the value from input', function() {
+      InputStubPrototype.getValue
+        .should.have.been.called
+        .and.have.been.calledExactlyTwice;
+    });
+
+    it('gets the list from select', function() {
+      SelectStubPrototype.getList
+        .should.have.been.called
+        .and.have.been.calledExactlyTwice;
+    });
+
+    it('sets the input value', function() {
+      BloodhoundStubPrototype.setInput
+        .should.have.been.calledWith(inputValue)
+        .and.should.have.been.calledExactlyTwice;
+    });
+
+    it('gets the data from bloodhound using with the list and options', function() {
+      BloodhoundStubPrototype.getSettings
+        .should.have.been.calledWith(list, options)
+        .and.should.have.been.calledExactlyTwice;
+    });
+
+    it('gets the source from bloodhound with the data', function() {
       BloodhoundStubPrototype.getSource
-        .should.have.been.calledWith(list)
+        .should.have.been.calledWith(data)
+        .and.have.been.calledExactlyTwice;
+    });
+
+    it('gets the element from the input', function() {
+      InputStubPrototype.getElement
+        .should.have.been.calledWith()
         .and.have.been.calledExactlyTwice;
     });
 
@@ -107,12 +140,6 @@ describe('typeahead', function() {
     it('removes the selectElement', function() {
       SelectStubPrototype.removeElement
         .should.have.been.calledExactlyTwice;
-    });
-
-    it('sets the input value', function() {
-      BloodhoundStubPrototype.setInput
-        .should.have.been.calledWith(inputValue)
-        .and.should.have.been.calledExactlyTwice;
     });
 
     it('starts the typeahead with source data', function() {

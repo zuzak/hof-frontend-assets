@@ -27,6 +27,7 @@
   "dependencies": {
     "async": "^2.1.4",
     "hof-frontend-toolkit": "^1.0.0",
+    "lodash": "^4.17.4",
     "node-sass": "^3.10.0",
     "typeahead-aria": "^1.0.1",
     "underscore": "^1.8.3"

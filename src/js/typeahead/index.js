@@ -8,7 +8,7 @@ var Select = require('./select');
 var Input = require('./input');
 var Bloodhound = require('./bloodhound');
 
-module.exports = function() {
+module.exports = function(options) {
   $('.typeahead').each(function createSelect() {
     var $element = $(this);
     var select = new Select($element);
@@ -18,7 +18,8 @@ module.exports = function() {
     var inputValue = input.getValue();
     var list = select.getList();
     bloodhound.setInput(inputValue);
-    var source = bloodhound.getSource(list);
+    var data = bloodhound.getSettings(list, options);
+    var source = bloodhound.getSource(data);
     var inputElement = input.getElement();
 
     select.append(inputElement);
