@@ -4,7 +4,6 @@ const path = require('path');
 const cwd = process.cwd();
 const target = path.resolve(cwd, 'public');
 const source = path.resolve(__dirname, '../src');
-const npmsass = require('npm-sass');
 
 // jscs:disable maximumLineLength
 module.exports = {
