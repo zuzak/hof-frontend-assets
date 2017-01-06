@@ -2,14 +2,6 @@
 
 var $ = require('jquery');
 
-var Input = function Input($selectEl) {
-  this.$element = $('<input/>');
-  var attributes = $selectEl.prop('attributes');
-  applyAttributes(this.$element, attributes);
-  setFormControl(this.$element);
-  setValue(this.$element, $selectEl);
-};
-
 var applyAttributes = function applyAttributes($element, attributes) {
   $.each(attributes, function eachAttribute(i, item) {
     $element.attr(item.name, item.value);
@@ -22,6 +14,14 @@ var setFormControl = function setFormControl($element) {
 
 var setValue = function setValue($element, $selectEl) {
   $element.val($selectEl.val());
+};
+
+var Input = function Input($selectEl) {
+  this.$element = $('<input/>');
+  var attributes = $selectEl.prop('attributes');
+  applyAttributes(this.$element, attributes);
+  setFormControl(this.$element);
+  setValue(this.$element, $selectEl);
 };
 
 Input.prototype.getValue = function getValue() {

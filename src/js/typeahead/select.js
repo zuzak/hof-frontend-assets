@@ -1,8 +1,5 @@
 'use strict';
 
-var $ = require('jquery');
-var Input = require('./input');
-
 var Select = function Select($element) {
   this.$element = $element;
   this.$parent = this.$element.parent();

@@ -9,6 +9,6 @@ var typeahead = require('./typeahead');
 helpers.documentReady(progressiveReveal);
 helpers.documentReady(formFocus);
 
-module.exports = function(options) {
+module.exports = function loadTypeahead(options) {
   typeahead(options);
 };

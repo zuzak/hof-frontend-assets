@@ -1,11 +1,15 @@
 #!/usr/bin/env node
 
+'use strict';
+
 const exec = require('child_process').exec;
 const tasks = require('./tasks');
 
-exec(tasks['make-folders'], (err) => {
-  if (err) {
-    return console.error(`Error making folders ${err}`);
+/* eslint-disable no-console */
+/* eslint-disable consistent-return */
+exec(tasks['make-folders'], (error) => {
+  if (error) {
+    return console.error(`Error making folders ${error}`);
   }
   console.log('Made folders');
 

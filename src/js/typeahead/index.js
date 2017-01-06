@@ -8,7 +8,7 @@ var Select = require('./select');
 var Input = require('./input');
 var Bloodhound = require('./bloodhound');
 
-module.exports = function(options) {
+module.exports = function loadEachTypeahead(options) {
   $('.typeahead').each(function createSelect() {
     var $element = $(this);
     var select = new Select($element);
