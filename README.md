@@ -1,4 +1,4 @@
-# HOF Frontend Assets
+# HOF Frontend Assets [![Build Status](https://travis-ci.org/UKHomeOfficeForms/hof-frontend-assets.svg?branch=master)](https://travis-ci.org/UKHomeOfficeForms/hof-frontend-assets) [![npm version](https://badge.fury.io/js/hof-frontend-assets.svg)](https://badge.fury.io/js/hof-frontend-assets) [![Known Vulnerabilities](https://snyk.io/test/npm/hof-frontend-assets/badge.svg)](https://snyk.io/test/npm/hof-frontend-assets)
 
 Frontend assets for building a form service with [HOF Bootstrap](https://github.com/UKHomeOfficeForms/hof-bootstrap).
 
