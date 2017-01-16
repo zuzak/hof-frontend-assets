@@ -6,14 +6,13 @@ const tasks = require('../../../bin/tasks');
 describe('./bin', () => {
 
   let execStub;
-  let bin;
 
   describe('without errors', () => {
 
     before(() => {
       execStub = sinon.stub().yields();
 
-      bin = proxyquire('../../../bin/index.js', {
+      proxyquire('../../../bin/index.js', {
         'child_process': {
           exec: execStub
         }
@@ -43,7 +42,7 @@ describe('./bin', () => {
     before(() => {
       execStub = sinon.stub().withArgs(tasks['make-folders']).yields([new Error()]);
 
-      bin = proxyquire('../../../bin/index.js', {
+      proxyquire('../../../bin/index.js', {
         'child_process': {
           exec: execStub
         }
@@ -66,7 +65,7 @@ describe('./bin', () => {
       sinon.stub().yields([new Error()]);
       execStub.withArgs(tasks['make-folders']).yields();
 
-      bin = proxyquire('../../../bin/index.js', {
+      proxyquire('../../../bin/index.js', {
         'child_process': {
           exec: execStub
         }

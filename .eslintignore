@@ -1,6 +1,3 @@
 coverage
 public
-src
-bin
-test
 karma.conf.js

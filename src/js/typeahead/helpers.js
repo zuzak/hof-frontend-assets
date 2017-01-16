@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = {
-  sorter: function(input) {
-    return function sorter(a, b) {
+  sorter: function sorter(input) {
+    return function sort(a, b) {
       var startsWithInput = function startsWithInput(x) {
         return x.toLowerCase().substr(0, input.length) === input.toLowerCase() ? -1 : 1;
       };

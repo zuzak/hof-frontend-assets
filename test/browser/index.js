@@ -1,10 +1,6 @@
 'use strict';
 
 var proxyquire = require('proxyquireify')(require);
-var $ = require('jquery');
-
-var inputElement = $('<input/>');
-var inputValue = 'foo';
 
 var toolkitStub = {
   helpers: {
