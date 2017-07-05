@@ -25,4 +25,4 @@ When you next run `npm install`, `npm` will install `hof-frontend-assets@v0.1.0`
 The Typeahead Aria code is a key feature of `hof-frontend-assets` that allows one to add a dropdown, typeahead countries list with aria to a select field.
 
 ### Usage
-To use Typeahead Aria, add `class='typeahead' to the HTML `select` element you wish to decorate.
+To use Typeahead Aria, add `class='typeahead'` to the HTML `select` element you wish to decorate.
